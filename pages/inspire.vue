@@ -1,19 +1,32 @@
 <template>
-  <v-layout>
-    <v-flex class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
-      >
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-flex>
-  </v-layout>
+  <v-container
+    class="fill-height"
+    fluid
+    style="min-height: 434px"
+  >
+    <v-fade-transition mode="out-in">
+      <v-row v-if="show" key="0">
+        <v-col cols="12">
+          <v-card>
+            <v-img
+              src="/bbq-bg.jpg"
+              height="425"
+              contain
+              class="grey darken-4"
+            />
+            <v-card-title class="title">
+              Sitecore Barbecue ...the Communiters SPA
+            </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-fade-transition>
+  </v-container>
 </template>
+<script>
+export default {
+  data: () => ({
+    show: true
+  })
+}
+</script>

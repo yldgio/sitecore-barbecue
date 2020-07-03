@@ -1,27 +1,17 @@
-/* eslint-disable vue/valid-v-on */
-/* eslint-disable vue/no-v-html */
-/* eslint-disable vue/no-v-html */
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md8
-    >
-      <div class="text-center">
-        <logo />
-        <sitecore-logo />
-      </div>
+  <v-layout>
+    <v-flex class="text-center">
+      <img
+        src="/v.png"
+        alt="Vuetify.js"
+        class="mb-5"
+      >
       <v-card>
         <v-card-title class="headline">
-          Sitecore Barbecue ...the Commuiters SPA
+          Gli Chef
         </v-card-title>
         <v-list three-line>
-          <template v-for="item in people">
+          <template v-for="item in chefs">
             <v-list-item
               :key="item.id"
             >
@@ -38,48 +28,18 @@
             </v-list-item>
           </template>
         </v-list>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/Events"
-          >
-            Events
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
 </template>
-
 <script>
 import axios from 'axios'
-import Logo from '~/components/Logo.vue'
-import SitecoreLogo from '~/components/SitecoreLogo.vue'
 export default {
-  components: {
-    Logo,
-    SitecoreLogo
-  },
   asyncData ({ params }) {
     return axios.get('http://communiters-dev.westeurope.cloudapp.azure.com/_api/speakers?sc_device=json')
       .then((res) => {
-        return { people: res.data.data }
+        return { chefs: res.data.data }
       })
   }
 }
 </script>
-<style scoped>
-.people li a {
-  display: block;
-  border: 1px #ddd solid;
-  padding: 10px;
-  text-align: left;
-  color: #222;
-  text-decoration: none;
-}
-.people li a:hover {
-  color: orange;
-}
-</style>

@@ -103,8 +103,18 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'Barbecue',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Gli Chef',
+          to: '/chefs'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Le ricette',
+          to: '/recipes'
         }
       ],
       miniVariant: false,
