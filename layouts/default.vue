@@ -110,7 +110,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Communiters on SPA'
+      title: 'Sitecore Barbecue - Communiters on SPA'
     }
   }
 }
