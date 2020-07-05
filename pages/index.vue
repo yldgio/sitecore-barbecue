@@ -9,18 +9,28 @@
   >
     <v-flex
       xs12
-      sm8
-      md8
     >
       <div class="text-center">
         <logo />
         <sitecore-logo />
       </div>
       <v-card>
-        <v-card-title class="headline">
-          Sitecore Barbecue ...the Commuiters SPA
-        </v-card-title>
+        <v-img
+          class="white--text align-end"
+          height="425"
+          gradient="to top right, rgba(100,115,201,.16), rgba(25,32,72,.7)"
+          src="/bbq-bg.jpg"
+        >
+          <v-card-title class="headline">
+            Sitecore Barbecue ...the Commuiters SPA
+          </v-card-title>
+          <v-card-subtitle class="">
+            Join us for a free drink... we will provide the meat!
+          </v-card-subtitle>
+        </v-img>
         <v-list three-line>
+          <v-subheader>Gli chef</v-subheader>
+          <!-- <v-list-group -->
           <template v-for="item in people">
             <v-list-item
               :key="item.id"
