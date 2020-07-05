@@ -53,7 +53,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/Events"
+            to="/calendar"
           >
             Events
           </v-btn>
