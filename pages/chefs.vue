@@ -34,9 +34,10 @@
 </template>
 <script>
 import axios from 'axios'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 export default {
   asyncData ({ params }) {
-    return axios.get('http://communiters-dev.westeurope.cloudapp.azure.com/_api/speakers?sc_device=json')
+    return axios.get('https://communiters-dev.westeurope.cloudapp.azure.com/_api/speakers?sc_device=json')
       .then((res) => {
         return { chefs: res.data.data }
       })

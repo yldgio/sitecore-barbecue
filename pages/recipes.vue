@@ -15,6 +15,9 @@
             <v-list-item
               :key="item.id"
             >
+              <v-list-item-avatar>
+                <v-img :src="'//communiters-dev.westeurope.cloudapp.azure.com' + item.speaker.picture" />
+              </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title v-text="item.title" />
                 <v-list-item-subtitle v-text="item.short_description" />
@@ -31,9 +34,10 @@
 </template>
 <script>
 import axios from 'axios'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 export default {
   asyncData ({ params }) {
-    return axios.get('http://communiters-dev.westeurope.cloudapp.azure.com/_api/speeches?sc_device=json')
+    return axios.get('https://communiters-dev.westeurope.cloudapp.azure.com/_api/speeches?sc_device=json')
       .then((res) => {
         return { recipes: res.data.data }
       })

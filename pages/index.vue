@@ -57,13 +57,15 @@
 import axios from 'axios'
 import Logo from '~/components/Logo.vue'
 import SitecoreLogo from '~/components/SitecoreLogo.vue'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
 export default {
   components: {
     Logo,
     SitecoreLogo
   },
   asyncData ({ params }) {
-    return axios.get('http://communiters-dev.westeurope.cloudapp.azure.com/_api/speakers?sc_device=json')
+    return axios.get('https://communiters-dev.westeurope.cloudapp.azure.com/_api/speakers?sc_device=json')
       .then((res) => {
         return { people: res.data.data }
       })
