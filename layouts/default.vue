@@ -101,11 +101,11 @@ export default {
           title: 'Benvenuti',
           to: '/'
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Barbecue',
-          to: '/inspire'
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Barbecue',
+        //   to: '/inspire'
+        // },
         {
           icon: 'mdi-apps',
           title: 'Gli Chef',
