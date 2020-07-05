@@ -115,6 +115,11 @@ export default {
           icon: 'mdi-apps',
           title: 'Le ricette',
           to: '/recipes'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Gli appuntamenti',
+          to: '/calendar'
         }
       ],
       miniVariant: false,
