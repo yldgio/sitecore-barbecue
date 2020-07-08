@@ -1,13 +1,7 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
+  <v-app>
+    <v-navigation-drawer clipped fixed app expand-on-hover>
+      <v-list @hover="mini = true">
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -24,65 +18,18 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
+    <v-app-bar :clipped-left="clipped" fixed app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
-        <nuxt />
+        <v-row column justify="center" align-content="center">
+          <nuxt />
+        </v-row>
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
+    <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -90,43 +37,35 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
+      clipped: true,
+      fixed: true,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Benvenuti',
-          to: '/'
-        },
-        // {
-        //   icon: 'mdi-chart-bubble',
-        //   title: 'Barbecue',
-        //   to: '/inspire'
-        // },
-        {
-          icon: 'mdi-apps',
-          title: 'Gli Chef',
-          to: '/chefs'
+          icon: "mdi-food-steak",
+          title: "Benvenuti",
+          to: "/"
         },
         {
-          icon: 'mdi-apps',
-          title: 'Le ricette',
-          to: '/recipes'
+          icon: "mdi-chef-hat",
+          title: "Gli Chef",
+          to: "/chefs"
         },
         {
-          icon: 'mdi-apps',
-          title: 'Gli appuntamenti',
-          to: '/calendar'
+          icon: "mdi-order-bool-descending-variant",
+          title: "Le ricette",
+          to: "/recipes"
+        },
+        {
+          icon: "mdi-calendar-clock",
+          title: "Gli appuntamenti",
+          to: "/calendar"
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Sitecore Barbecue - Communiters on SPA'
-    }
+      miniVariant: true,
+      title: "Sitecore Barbecue - Communiters on SPA"
+    };
   }
-}
+};
 </script>

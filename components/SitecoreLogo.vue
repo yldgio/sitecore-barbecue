@@ -1,9 +1,5 @@
 <template>
-  <img
-    class="SitecoreLogo"
-    alt="Sitecore Logo"
-    src="/sitecore.svg"
-  >
+  <img class="SitecoreLogo" alt="Sitecore Logo" src="/sitecore.svg" />
 </template>
 
 <style>

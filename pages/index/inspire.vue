@@ -1,9 +1,5 @@
 <template>
-  <v-container
-    class="fill-height"
-    fluid
-    style="min-height: 434px"
-  >
+  <v-container class="fill-height" fluid style="min-height: 434px">
     <v-fade-transition mode="out-in">
       <v-row v-if="show" key="0">
         <v-col cols="12">
@@ -28,5 +24,5 @@ export default {
   data: () => ({
     show: true
   })
-}
+};
 </script>
