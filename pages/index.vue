@@ -1,13 +1,13 @@
 /* eslint-disable vue/valid-v-on */ /* eslint-disable vue/no-v-html */ /*
 eslint-disable vue/no-v-html */
 <template>
-  <v-col sm="10" md="9" lg="7">
+  <v-col sm="10" md="9" lg="11">
     <v-card>
       <v-parallax dark height="300" src="/bbq-bg2.jpg">
         <v-row align="center" justify="center">
           <v-col class="text-center text-shadow" cols="12">
             <h1 class="headline">
-              Sitecore Barbecue ...the Commuiters SPA
+              Sitecore Barbecue ...the Communiters SPA
             </h1>
             <h4 class="subheading">
               Join us for a free drink... we will provide the meat!
@@ -15,6 +15,15 @@ eslint-disable vue/no-v-html */
           </v-col>
         </v-row></v-parallax
       >
+        <v-alert
+          outlined
+          type="warning"
+          prominent
+          border="left"
+          close-text="Chiudi" 
+          dismissible>
+          Gentili Communiters, a causa dell'epidemia di coronavirus (COVID-19) non saremo in grado di garantire carne per tutti
+        </v-alert>
       <nuxt-child />
     </v-card>
   </v-col>
