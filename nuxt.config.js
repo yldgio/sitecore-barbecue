@@ -28,7 +28,7 @@ export default {
       }
     ],
     script: [
-      { src: '//communiters-dev.westeurope.cloudapp.azure.com/bundle/beacon' }
+      { src: '//communiters-dev.westeurope.cloudapp.azure.com/bundle/beacon', defer: true }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
